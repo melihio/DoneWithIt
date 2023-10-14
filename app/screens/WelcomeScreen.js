@@ -48,11 +48,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     position: "absolute",
   },
-  registerButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "#4ecdc4",
-  },
 });
 
 export default WelcomeScreen;

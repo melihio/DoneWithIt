@@ -13,7 +13,7 @@ function AppButton(props) {
 
   return (
     <View style={[styles.button, custom.style]}>
-      <AppText color="#fff">{props.text}</AppText>
+      <AppText style={{ color: "#fff" }}>{props.text}</AppText>
     </View>
   );
 }
