@@ -1,9 +1,10 @@
-import { View } from "react-native";
-import AppCard from "./app/components/Card";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import ListDetails from "./app/screens/ListDetails";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import MessagesScreen from "./app/screens/MessagesScreen";
 
 export default function App() {
-  // return <WelcomeScreen />;
-  return <ListDetails image={require("./app/assets/jacket.jpg")} />;
+  return (
+    <GestureHandlerRootView>
+      <MessagesScreen />
+    </GestureHandlerRootView>
+  );
 }
