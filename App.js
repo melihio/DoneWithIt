@@ -1,10 +1,10 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import MessagesScreen from "./app/screens/MessagesScreen";
+import MainScreen from "./app/screens/MainScreen";
 
 export default function App() {
   return (
     <GestureHandlerRootView>
-      <MessagesScreen />
+      <MainScreen />
     </GestureHandlerRootView>
   );
 }

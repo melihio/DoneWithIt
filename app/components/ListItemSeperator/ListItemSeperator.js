@@ -9,7 +9,7 @@ function ListItemSeperator() {
         width: "100%",
         height: 1,
         backgroundColor: colors.light,
-        marginVertical: 10,
+        // marginVertical: 10,
       }}
     />
   );
