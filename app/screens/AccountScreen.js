@@ -1,15 +1,41 @@
-import AppText from "../components/AppText";
-import { StyleSheet, Image, View } from "react-native";
+import { StyleSheet } from "react-native";
 import Screen from "../components/Screen";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
-import SettingItem from "../components/SettingItem";
-import ListItemSeperator from "../components/ListItemSeperator";
+import Icon from "../components/Icon";
+import ListItem from "../components/ListItem";
+
+data = [
+  { title: "My Listings", name: "email" },
+  { title: "My Messages", name: "email" },
+];
 
 function MyAccountScreen(props) {
   return (
     <Screen style={styles.screen}>
-      <View style={styles.container}>
+      <ListItem
+        title="Mosh Hamedani"
+        subTitle="programmingwithmosh@gmail.com"
+        image={require("../assets/mosh.jpg")}
+        style={{ backgroundColor: "white", marginBottom: 40 }}
+      />
+      <ListItem
+        title="My Listings"
+        ImageComponent={<Icon name="format-list-bulleted" />}
+        style={{ backgroundColor: "white" }}
+      />
+      <ListItem
+        title="My Messages"
+        ImageComponent={<Icon name="email" />}
+        style={{ backgroundColor: "white" }}
+      />
+      <ListItem
+        title="Log Out"
+        ImageComponent={
+          <Icon name="logout" backgroundColor={colors.tertiary} />
+        }
+        style={{ marginTop: 15, backgroundColor: "white" }}
+      />
+      {/* <View style={styles.container}>
         <Image style={styles.image} source={require("../assets/mosh.jpg")} />
         <View style={styles.textContainer}>
           <AppText>Mosh Hamedani</AppText>
@@ -34,7 +60,7 @@ function MyAccountScreen(props) {
         text="Log out"
         iconName="email"
         style={{ marginTop: 35 }}
-      />
+      /> */}
     </Screen>
   );
 }
