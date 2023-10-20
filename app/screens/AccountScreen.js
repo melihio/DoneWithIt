@@ -9,7 +9,7 @@ data = [
   { title: "My Messages", name: "email" },
 ];
 
-function MyAccountScreen(props) {
+function MyAccountScreen() {
   return (
     <Screen style={styles.screen}>
       <ListItem
@@ -20,12 +20,16 @@ function MyAccountScreen(props) {
       />
       <ListItem
         title="My Listings"
-        ImageComponent={<Icon name="format-list-bulleted" />}
+        ImageComponent={
+          <Icon name="format-list-bulleted" backgroundColor={colors.primary} />
+        }
         style={{ backgroundColor: "white" }}
       />
       <ListItem
         title="My Messages"
-        ImageComponent={<Icon name="email" />}
+        ImageComponent={
+          <Icon name="email" backgroundColor={colors.secondary} />
+        }
         style={{ backgroundColor: "white" }}
       />
       <ListItem
@@ -35,32 +39,6 @@ function MyAccountScreen(props) {
         }
         style={{ marginTop: 15, backgroundColor: "white" }}
       />
-      {/* <View style={styles.container}>
-        <Image style={styles.image} source={require("../assets/mosh.jpg")} />
-        <View style={styles.textContainer}>
-          <AppText>Mosh Hamedani</AppText>
-          <AppText style={styles.mailText}>
-            programmingwithmosh@gmail.com
-          </AppText>
-        </View>
-      </View>
-      <SettingItem
-        bgColor={colors.primary}
-        text="My Listings"
-        iconName="format-list-bulleted"
-      />
-      <ListItemSeperator />
-      <SettingItem
-        bgColor={colors.secondary}
-        text="My Messages"
-        iconName="logout"
-      />
-      <SettingItem
-        bgColor={colors.tertiary}
-        text="Log out"
-        iconName="email"
-        style={{ marginTop: 35 }}
-      /> */}
     </Screen>
   );
 }
