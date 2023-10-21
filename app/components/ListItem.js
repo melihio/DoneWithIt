@@ -1,9 +1,8 @@
 import React from "react";
-import { View, Image, TouchableHighlight } from "react-native";
+import { View, Image, TouchableHighlight, StyleSheet } from "react-native";
 import { Swipeable } from "react-native-gesture-handler";
-import AppText from "../AppText";
-import styles from "./styles";
-import colors from "../../config/colors";
+import AppText from "./AppText";
+import colors from "../config/colors";
 
 function ListItem({
   title,
@@ -33,5 +32,28 @@ function ListItem({
     </Swipeable>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    padding: 10,
+    alignItems: "center",
+  },
+  image: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+  },
+  subTitle: {
+    color: colors.medium,
+    fontWeight: "100",
+  },
+  title: {
+    fontWeight: "500",
+  },
+  textContainer: {
+    marginLeft: 10,
+  },
+});
 
 export default ListItem;

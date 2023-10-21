@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import colors from "../../config/colors";
+import colors from "../config/colors";
 
 function ListItemSeperator() {
   return (
@@ -9,7 +9,6 @@ function ListItemSeperator() {
         width: "100%",
         height: 1,
         backgroundColor: colors.light,
-        // marginVertical: 10,
       }}
     />
   );
