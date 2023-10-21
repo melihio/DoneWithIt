@@ -3,6 +3,7 @@ import { View, Image, TouchableHighlight, StyleSheet } from "react-native";
 import { Swipeable } from "react-native-gesture-handler";
 import AppText from "./AppText";
 import colors from "../config/colors";
+import Chevron from "./Chevron";
 
 function ListItem({
   title,
@@ -12,21 +13,25 @@ function ListItem({
   onPress,
   renderRightActions,
   style,
+  showChevrons,
 }) {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
-        <View style={[styles.container, style]}>
-          {ImageComponent}
-          {image && <Image style={styles.image} source={image} />}
-          <View style={styles.textContainer}>
-            <AppText style={styles.title}>{title}</AppText>
-            {subTitle && (
-              <AppText style={[styles.subTitle, { fontSize: 18 }]}>
-                {subTitle}
-              </AppText>
-            )}
+        <View style={styles.parent}>
+          <View style={[styles.container, style]}>
+            {ImageComponent}
+            {image && <Image style={styles.image} source={image} />}
+            <View style={styles.textContainer}>
+              <AppText style={styles.title}>{title}</AppText>
+              {subTitle && (
+                <AppText style={[styles.subTitle, { fontSize: 18 }]}>
+                  {subTitle}
+                </AppText>
+              )}
+            </View>
           </View>
+          {showChevrons && <Chevron style={{ alignSelf: "center" }} />}
         </View>
       </TouchableHighlight>
     </Swipeable>
@@ -34,6 +39,11 @@ function ListItem({
 }
 
 const styles = StyleSheet.create({
+  parent: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItem: "center",
+  },
   container: {
     flexDirection: "row",
     padding: 10,
